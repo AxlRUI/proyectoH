@@ -7,6 +7,7 @@
         exit();
     }
     else{
+        $cveUP = "123QWE";
         $Nombre = $_POST['nombre'];
         $Apellidos  = $_POST['apellidos'];
         $Edad = $_POST['edad'];
