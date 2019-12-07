@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>
+    <script type="text/javascript" src="../anime-master/lib/anime.min.js"></script>
+    <script type="text/javascript" src="../js/conexion.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <section class="contenido">
+      <div class="centrar">
+        <form class="" method="post">
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuál es tu nombre?</h3>
+              <input id="nombre" name="nombre" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuáles son tus apellidos?</h3>
+              <input id="apellido" name="apellido" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuál es tu edad?</h3>
+              <input id="edad" name="edad" type="number" max="120" min="0" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingrese grupo sangineo</h3>
+              <select name="gs">
+                <option value="" disabled selected>Selecciona un grupo</option>
+                <option value="O-">O-</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+              </select>
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Número seguro social</h3>
+              <input id="ssn" name="ssn" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingrese grupo sangineo</h3>
+              <select name="en">
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                <option value="Colima">Colima</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Distrito Federal">Distrito Federal</option>
+                <option value="Durango">Durango</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="México">México</option>
+                <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétaro">Querétaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+              </select>
+              <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+            </div>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingresa tu CURP</h3>
+              <input id="curp" name="curp" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingresa tu correo electronico</h3>
+              <input id="email" name="email" type="email" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="send();" type="button" name="button">Siguiente</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="../js/letters1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function send(){
+        var url = "../../phpDocs/testing.php";
+        var data = "nombre="+$('#nombre').val()+"&"+
+                  "apellido="+$('#apellido').val()+"&"+
+                  "edad="+$('#edad').val()+"&"+
+                  "gs="+$('#gs').val()+"&"+
+                  "ssn="+$('#ssn').val()+"&"+
+                  "en="+$('#en').val()+"&"+
+                  "curp="+$('#curp').val()+"&"+
+                  "email="+$('#email').val()+"&"+
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
+      }
+      function back(){
+        console.log($index);
+        $('form').children().eq($index).hide();
+        $index--;
+        console.log($index);
+        $('form').children().eq($index).show();
+      }
+      function next(){
+        console.log($index);
+        $('form').children().eq($index).hide();
+        $index++;
+        console.log($index);
+        $('form').children().eq($index).show();
+      }
+      $(document).ready(function(){
+        M.AutoInit();
+        $index = 0;
+        $('.form-switcher').hide();
+        $('form').children().eq(0).show();
+      });
+    </script>
+  </body>
+</html>
