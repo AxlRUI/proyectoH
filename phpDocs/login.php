@@ -11,10 +11,12 @@ if($db ->connect_errno){
     $Pass = $_POST['Pass'];
     $QueryBuscar = "SELECT * FROM Pacientes WHERE curp = $CURP AND Pass = $Pass;";
     if($resultado = $db -> query($QueryBuscar)){
-        $rowPacinte = $resultado -> fetch_array(MYSQLI_NUM);
+        $rowPaciente = $resultado -> fetch_array(MYSQLI_NUM);
         $_SESSION['Usuario'] = $rowPacinte[9];
         $_SESSION['Pass'] = $rowPaciente[7];
         header("Location: ../app.php");
+
+
     }
 }
 ?>
