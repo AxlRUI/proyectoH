@@ -1,13 +1,12 @@
 <?php
     include 'conect.php';
-    $db = conectarBD();
+    $db = conectarDB();
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ".$db->connect_error;
         echo json_encode($error);  
         exit();
     }
     else{
-    
         $Nombre = $_POST['Nombre'];
         $Apellidos  = $_POST['Apellidos'];
         $Edad = $_POST['Edad'];
@@ -22,5 +21,6 @@
             $string  = "Exitoso";
             echo json_encode($string);
         }
+        $db -> close()
     }
 ?>
