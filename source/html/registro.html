@@ -15,7 +15,7 @@
   </head>
   <body>
     <section class="contenido">
-      <div class="centrar">
+      <div class="centrar contenido">
         <form class="" method="post">
           <div class="form-switcher">
             <div class="input-field col s6">
@@ -63,7 +63,7 @@
           </div>
           <div class="form-switcher">
             <div class="input-field col s6">
-              <h3>Ingrese grupo sangineo</h3>
+              <h3>Ingrese el estado</h3>
               <select name="en">
                 <option value="Aguascalientes">Aguascalientes</option>
                 <option value="Baja California">Baja California</option>
@@ -113,7 +113,14 @@
               <h3>Ingresa tu correo electronico</h3>
               <input id="email" name="email" type="email" class="validate">
             </div>
-            <button class="btn azulBtn" onclick="send();" type="button" name="button">Siguiente</button>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingresa una contraseña</h3>
+              <input id="pass" name="pass" type="password" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="send();" type="button" name="button">Regitrarme</button>
           </div>
         </form>
       </div>
@@ -129,9 +136,19 @@
                   "ssn="+$('#ssn').val()+"&"+
                   "en="+$('#en').val()+"&"+
                   "curp="+$('#curp').val()+"&"+
-                  "email="+$('#email').val()+"&"+
+                  "email="+$('#email').val();
+        var xhttp = new XMLHttpRequest();
         xhttp.open("POST", url, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhttp.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200) {
+            console.log(xhttp.responseText);
+            if (xhttp.responseText == "Exitoso") {
+              window.location.href = "app.php";
+            }
+          }
+        }
         xhttp.send(data);
       }
       function back(){
