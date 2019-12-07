@@ -15,18 +15,39 @@
   </head>
   <body>
     <section class="contenido">
-      <div id="map" style="width: 100%; height: 400px;"></div>
+      <div id="map" style="width: 100%; height: 100%; position: absolute"></div>
     </section>
     <script>
       // Initialize and add the map
       function initMap() {
       // The location of Uluru
       var uluru = {lat: 22.1499418, lng: -100.9943265};
+      var locations = [
+          ['Hospital Lomas', 22.12533, -101.022244, 3],
+          ['IMSS UMF No. 45', 22.146453, -100.95574, 2],
+          ['IMSS UMF No. 50', 22.134326, -100.922251, 1]
+        ];
       // The map, centered at Uluru
       var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 15, center: uluru});
+          document.getElementById('map'), {zoom: 13, center: uluru});
       // The marker, positioned at Uluru
-      var marker = new google.maps.Marker({position: uluru, map: map});
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map,
+          icon: '../jeringamini.png'
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+
       }
         </script>
         <!--Load the API from the specified URL
