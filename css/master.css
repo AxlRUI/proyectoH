@@ -125,3 +125,7 @@ form {
 .ml13 .letter {
   display: inline-block;
   line-height: 1em; }
+
+@media only screen and (max-width: 600px) {
+  .ml13 {
+    font-size: 10px; } }

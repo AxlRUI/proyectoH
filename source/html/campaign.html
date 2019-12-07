@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>
+    <script type="text/javascript" src="../anime-master/lib/anime.min.js"></script>
+    <script type="text/javascript" src="../js/conexion.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <section class="contenido">
+      <div id="map" style="width: 100%; height: 400px;"></div>
+    </section>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+      // The location of Uluru
+      var uluru = {lat: 22.1499418, lng: -100.9943265};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 15, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+        </script>
+        <!--Load the API from the specified URL
+        * The async attribute allows the browser to render the page while the API loads
+        * The key parameter will contain your own API key (which is not needed for this tutorial)
+        * The callback parameter executes the initMap() function
+        -->
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_19CAXiHJknVLAZc8I1hBtDhzI2LJb6Q&callback=initMap">
+  </script>
+    <script src="../js/letters1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        M.AutoInit();
+        $index = 0;
+        $('.form-switcher').hide();
+        $('form').children().eq(0).show();
+      });
+    </script>
+  </body>
+</html>
