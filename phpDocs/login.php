@@ -14,7 +14,7 @@ if($db ->connect_errno){
         $rowPacinte = $resultado -> fetch_array(MYSQLI_NUM);
         $_SESSION['Usuario'] = $rowPacinte[9];
         $_SESSION['Pass'] = $rowPaciente[7];
+        header("Location: ../app.php");
     }
 }
-
 ?>
