@@ -14,8 +14,7 @@
             $stringPacienteJson ;
             $QueryCartilla = "SELECT * FROM Cartilla WHERE CveUnicaPaciente = $rowPaciente[0];";
             if($resultadoV = $db ->query($QueryCartilla) ){
-                while($rowCartilla = $resultadoV -> fetch_array(MYSQLI_NUM) ){
-                     
+                while($rowCartilla = $resultadoV -> fetch_array(MYSQLI_NUM) ){                 
                     $stringJason ;
                 }
             }
