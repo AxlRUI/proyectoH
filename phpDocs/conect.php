@@ -7,4 +7,4 @@
         $db = new mysqli($host,$username,$password,$database);
         return $db;
     }
-?>
+?> 
