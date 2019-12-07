@@ -7,10 +7,10 @@
         echo json_encode($error);  
         exit();
     }else{
-        $flag = $_POST['flag'];
-        if($flag == "true"){
-            $CURP = $_SESSION['Usuario'];
-            $pass = $_SESSION['Pass'];
+        //$flag = $_POST['flag'];
+        //if($flag == "true"){
+            $CURP = "HEPD98" ;
+            $pass = "123qwe";
             $QueryBuscar = "SELECT * FROM Paciente WHERE curp = '$CURP' AND Pass = '$Pass'";
             $arrayPrincial = new array();
             if($resultado = $db -> query($QueryBuscar)){
@@ -54,6 +54,6 @@
                     print_r ($arrayPrincial);
                 }
             }    
-        }
+        //}
     }
 ?>
