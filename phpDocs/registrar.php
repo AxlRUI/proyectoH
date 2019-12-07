@@ -1,6 +1,6 @@
 <?php
     include 'conect.php';
-    $db = conectarBD();
+    $db = conectarDB();
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ".$db->connect_error;
         echo json_encode($error);  
@@ -21,5 +21,6 @@
             $string  = "Exitoso";
             echo json_encode($string);
         }
+        $db -> close()
     }
 ?>
