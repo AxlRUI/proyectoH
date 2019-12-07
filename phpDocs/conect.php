@@ -4,7 +4,7 @@
         $username = "u582402068_osiris";
         $password = "123qwe";
         $host = "sql52.main-hosting.eu";
-        $db mysqli_connect();
+        $db = new mysqli($host,$username,$password,$database);
         return $db;
     }
 
