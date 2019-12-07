@@ -30,6 +30,7 @@
             echo json_encode($string);
             $_SESSION['Usuario'] = $CURP;
             $_SESSION['Pass'] = $Pass;
+            
         }
         $db -> close();
     }
