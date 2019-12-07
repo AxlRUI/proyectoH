@@ -1,4 +1,4 @@
 <?php
-    $test = "JSON CORRECTO";
+    $test = json_decode($_POST);
     echo json_encode($test);
 ?>
