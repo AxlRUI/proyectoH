@@ -14,7 +14,7 @@ if($db ->connect_errno){
         $rowPaciente = $resultado -> fetch_array(MYSQLI_NUM);
         $_SESSION['Usuario'] = $rowPacinte[9];
         $_SESSION['Pass'] = $rowPaciente[7];
-        $link = "<scritp>window.open(\"..\app.php\")</script>";
+        $link = "<script>window.open(\"..\app.php\")</script>";
         echo $link;
     }else{
         $string = "Error";
