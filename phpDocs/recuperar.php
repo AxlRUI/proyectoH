@@ -11,10 +11,14 @@
         $Pass = $_POST['Pass'];
         $QueryBuscar = "SELECT * FROM Pacientes WHERE curp = $CURP AND Pass = $Pass;";
         if($resultado = $db -> query($QueryBuscar)){
-            $rowPaciente = $resultado ->fetch_array($resultado);
+            $rowPaciente = $resultado ->fetch_array(MYSQLI_NUM);
             $QueryCartilla = "SELECT * FROM Vacunas WHERE CveUnicaPaciente = $rowPaciente[0];";
-            $resultado
-            while($rowCartilla = )
+            if($resultadoV = $db ->query($QueryCartilla) ){
+                while($rowCartilla = $resultadoV -> fetch_array(MYSQLI_NUM) ){
+                     
+                    $stringJason .=
+                }
+            }
         }
     }*/
 ?>
