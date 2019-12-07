@@ -15,7 +15,6 @@
             $arrayPrincial = new array();
             if($resultado = $db -> query($QueryBuscar)){
                 $rowPaciente = $resultado ->fetch_array(MYSQLI_NUM);
-                $rowPaciente[6]+$rowPaciente[7]+$rowPaciente[8]+$rowPaciente[9];
                 $arrayPaciente = [
                     "Nombre" => $rowPaciente [1],
                     "Apellidos"  => $rowPaciente[2],
