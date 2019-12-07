@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
   session_start();
-  if (!isset($_SESSION['Usuario'])) {
-    header("Location: index.html");
-  }
+
  ?>
 <html>
   <head>
@@ -20,7 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-
     <section class="contenido">
       <iframe src="source/html/cartilla.html" width="100%" height="100%" name="main_frame"></iframe>
     </section>
