@@ -50,7 +50,8 @@
                         }
                         array_push($arrayPrincial,$arrayCartilla);
                     }
-                    echo json_encode($arrayPrincial);
+                    //echo json_encode($arrayPrincial);
+                    print_r ($arrayPrincial);
                 }
             }    
         }
