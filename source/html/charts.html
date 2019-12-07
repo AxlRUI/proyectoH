@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../js/conexion.js"></script>
     <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/utils.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,20 +21,33 @@
         <div class="chart-container">
           <canvas id="myChart"></canvas>
               <script>
+              var barChartData = {
+          			labels: ['actuales'],
+          			datasets: [{
+          				label: 'Casos en México',
+          				backgroundColor: window.chartColors.green,
+          				data: [
+          					37057
+          				]
+          			}, {
+          				label: 'Casos en el estado',
+          				backgroundColor: window.chartColors.blue,
+          				data: [
+          					1506
+          				]
+          			}, {
+          				label: 'Defunciones en el estado',
+          				backgroundColor: window.chartColors.red,
+          				data: [
+          					14
+          				]
+          			}]
+
+          		};
               var ctx = document.getElementById('myChart').getContext('2d');
               var stackedBar = new Chart(ctx, {
                   type: 'bar',
-                  data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}],
-                  options: {
-                      scales: {
-                          xAxes: [{
-                              stacked: true
-                          }],
-                          yAxes: [{
-                              stacked: true
-                          }]
-                      }
-                  }
+                  data: barChartData
               });
               </script>
         </div>
