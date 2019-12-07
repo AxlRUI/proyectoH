@@ -59,6 +59,60 @@
               <h3>Número seguro social</h3>
               <input id="ssn" name="ssn" type="text" class="validate">
             </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingrese grupo sangineo</h3>
+              <select name="en">
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                <option value="Colima">Colima</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Distrito Federal">Distrito Federal</option>
+                <option value="Durango">Durango</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="México">México</option>
+                <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétaro">Querétaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+              </select>
+              <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+            </div>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingresa tu CURP</h3>
+              <input id="curp" name="curp" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingresa tu correo electronico</h3>
+              <input id="email" name="email" type="email" class="validate">
+            </div>
             <button class="btn azulBtn" onclick="send();" type="button" name="button">Siguiente</button>
           </div>
         </form>
@@ -66,7 +120,20 @@
     </section>
     <script src="../js/letters1.js" charset="utf-8"></script>
     <script type="text/javascript">
-    
+      function send(){
+        var url = "../../phpDocs/testing.php";
+        var data = "nombre="+$('#nombre').val()+"&"+
+                  "apellido="+$('#apellido').val()+"&"+
+                  "edad="+$('#edad').val()+"&"+
+                  "gs="+$('#gs').val()+"&"+
+                  "ssn="+$('#ssn').val()+"&"+
+                  "en="+$('#en').val()+"&"+
+                  "curp="+$('#curp').val()+"&"+
+                  "email="+$('#email').val()+"&"+
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
+      }
       function back(){
         console.log($index);
         $('form').children().eq($index).hide();
