@@ -7,7 +7,6 @@
         exit();
     }
     else{
-    
         $Nombre = $_POST['Nombre'];
         $Apellidos  = $_POST['Apellidos'];
         $Edad = $_POST['Edad'];
