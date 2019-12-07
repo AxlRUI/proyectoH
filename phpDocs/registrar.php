@@ -3,11 +3,11 @@
     include 'conect.php';
     $seed = str_split('abcdefghijklmnopqrstuvwxyz'
                  .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-                 .'0123456789!@#$%^&*()')
+                 .'0123456789!@#$%^&*()');
     $db = conectarDB();
     shuffle($seed);
     $rand = '';
-    foreach (array_rand($seed, 6) as $k) $rand .= $seed[$k]
+    foreach (array_rand($seed, 6) as $k) $rand .= $seed[$k];
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ";
         echo json_encode($error);

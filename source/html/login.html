@@ -16,7 +16,7 @@
   <body>
     <section class="contenido">
       <div class="centrar contenido">
-        <form class="" method="post">
+        <form class="" action="../../phpDocs/login.php" method="post">
           <div class="form-switcher">
             <div class="input-field col s6">
               <h3>Ingresa tu CRUP</h3>
@@ -27,16 +27,16 @@
           <div class="form-switcher">
             <div class="input-field col s6">
               <h3>Ingresa una contraseña</h3>
-              <input id="pass" name="pass" type="password" class="validate">
+              <input id="Pass" name="Pass" type="password" class="validate">
             </div>
-            <input class="btn azulBtn" type="button" name="button" value="Entrar">
+            <input class="btn azulBtn" type="submit" name="button" value="Entrar">
           </div>
         </form>
       </div>
     </section>
     <script src="../js/letters1.js" charset="utf-8"></script>
     <script type="text/javascript">
-    
+
       function back(){
         console.log($index);
         $('form').children().eq($index).hide();

@@ -34,8 +34,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="source/html/welcome.html" target="main_frame">Inicio</a></li>
             <li><a href="source/html/informacion.html" target="main_frame">Información</a></li>
-            <li><a href="source/html/campaign.html" target="main_frame">Campaña</a></li>
-            <li><a href="source/html/registro.html" target="main_frame">Registro</a></li>
+            <li><a href="source/html/cartilla.php" target="main_frame">Cartilla</a></li>
           </ul>
         </div>
       </nav>
