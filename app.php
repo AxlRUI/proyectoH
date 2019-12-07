@@ -20,30 +20,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <!--div class="debug">
-      <a href="source/html/welcome.html" target="main_frame">Main</a>
-      <a href="source/html/test.html" target="main_frame">Test JSON</a>
-      <a href="source/html/charts.html" target="main_frame">Charts</a>
-      <a href="source/html/maps.html" target="main_frame">Maps</a>
-      <a href="source/html/registro.html" target="main_frame">Registro</a>
-    </div-->
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper blancoBck">
-          <a href="#" class="brand-logo logo"><img src="source/logobello.png" alt="" /></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="source/html/welcome.html" target="main_frame">Inicio</a></li>
-            <li><a href="source/html/informacion.html" target="main_frame">Información</a></li>
-            <li><a href="source/html/cartilla.php" target="main_frame">Cartilla</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+
     <section class="contenido">
-      <iframe src="source/html/welcome.html" width="100%" height="100%" name="main_frame"></iframe>
+      <iframe src="source/html/cartilla.html" width="100%" height="100%" name="main_frame"></iframe>
     </section>
     <script type="text/javascript">
-
+      $(document).ready(function(){
+        M.AutoInit();
+      });
     </script>
   </body>
 </html>
