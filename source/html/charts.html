@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>
+    <script type="text/javascript" src="../anime-master/lib/anime.min.js"></script>
+    <script type="text/javascript" src="../js/conexion.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CHARTS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  </head>
+  <body>
+    <section class="contenido">
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+              <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var stackedBar = new Chart(ctx, {
+                  type: 'bar',
+                  data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}],
+                  options: {
+                      scales: {
+                          xAxes: [{
+                              stacked: true
+                          }],
+                          yAxes: [{
+                              stacked: true
+                          }]
+                      }
+                  }
+              });
+              </script>
+        </div>
+
+    </section>
+  </body>
+</html>

@@ -1,4 +1,4 @@
 <?php
-    $test = "Okay todo chingon papu";
+    $test = "JSON CORRECTO";
     echo json_encode($test);
 ?>
