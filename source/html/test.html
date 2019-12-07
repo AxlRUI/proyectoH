@@ -3,18 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="../anime-master/lib/anime.min.js"></script>
+    <script type="text/javascript" src="../js/conexion.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="" id="debug">
 
     </div>
+    <input id="edad" name="edad" type="number" max="120" min="0" class="validate">
+    <button type="" onclick="send();" name="button">Send</button>
     <script type="text/javascript" src="../js/conexion.js"></script>
     <script type="text/javascript">
-      var url = "../../phpDocs/phpTest.php";
-      var data = "nombre=HOLA MUNDO"+"&"+"apellido=PERROS CALIENTES";
-      xhttp.open("POST", url, true);
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send(data);
+      function send(){
+        var url = "../../phpDocs/phpTest.php";
+        var data = "nombre="+$('#edad')+"&"+"apellido=PERROS CALIENTES";
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
+      }
     </script>
   </body>
 </html>

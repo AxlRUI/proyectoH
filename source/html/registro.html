@@ -16,28 +16,57 @@
   <body>
     <section class="contenido">
       <div class="centrar">
-        <div class="form">
-          <form class="" method="post">
-            <div class="form-switcher">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="nombre" name="nombre" type="text" class="validate">
-                <label for="nombre">Nombres</label>
-              </div>
-              <button class="btn" onclick="next();" type="button" name="button">Siguiente</button>
+        <form class="" method="post">
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuál es tu nombre?</h3>
+              <input id="nombre" name="nombre" type="text" class="validate">
             </div>
-            <div class="form-switcher">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">Apellido</label>
-              </div>
-              <button class="btn" onclick="next();" type="button" name="button">Siguiente</button>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuáles son tus apellidos?</h3>
+              <input id="apellido" name="apellido" type="text" class="validate">
             </div>
-          </form>
-        </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>¿Cuál es tu edad?</h3>
+              <input id="edad" name="edad" type="number" max="120" min="0" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Ingrese grupo sangineo</h3>
+              <select name="gs">
+                <option value="" disabled selected>Selecciona un grupo</option>
+                <option value="O-">O-</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+              </select>
+            </div>
+            <button class="btn azulBtn" onclick="next();" type="button" name="button">Siguiente</button>
+          </div>
+          <div class="form-switcher">
+            <div class="input-field col s6">
+              <h3>Número seguro social</h3>
+              <input id="ssn" name="ssn" type="text" class="validate">
+            </div>
+            <button class="btn azulBtn" onclick="send();" type="button" name="button">Siguiente</button>
+          </div>
+        </form>
       </div>
     </section>
     <script src="../js/letters1.js" charset="utf-8"></script>
     <script type="text/javascript">
+    
       function back(){
         console.log($index);
         $('form').children().eq($index).hide();
