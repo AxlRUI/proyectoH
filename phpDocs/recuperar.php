@@ -11,7 +11,7 @@
         if($flag == "true"){
             $CURP = $_SESSION['Usuario'];
             $pass = $_SESSION['Pass'];
-            $QueryBuscar = "SELECT * FROM Paciente WHERE curp = '$CURP' AND Pass = '$Pass';";
+            $QueryBuscar = "SELECT * FROM Paciente WHERE curp = '$CURP' AND Pass = '$Pass'";
             $arrayPrincial = new array();
             if($resultado = $db -> query($QueryBuscar)){
                 $rowPaciente = $resultado ->fetch_array(MYSQLI_NUM);
