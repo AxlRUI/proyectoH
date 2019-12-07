@@ -11,16 +11,33 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/master.css" media="screen" title="no title">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CHARTS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
   <body>
     <section class="contenido">
-      <div class="centrar">
-        <h1 class="ml13">Proyecto H</h1>
-        <p>
-          prueba anime.js
-        </p>
-      </div>
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+              <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var stackedBar = new Chart(ctx, {
+                  type: 'bar',
+                  data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}],
+                  options: {
+                      scales: {
+                          xAxes: [{
+                              stacked: true
+                          }],
+                          yAxes: [{
+                              stacked: true
+                          }]
+                      }
+                  }
+              });
+              </script>
+        </div>
+
     </section>
-    <script src="../js/letters1.js" charset="utf-8"></script>
   </body>
 </html>

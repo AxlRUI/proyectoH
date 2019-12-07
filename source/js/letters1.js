@@ -1,5 +1,9 @@
-var textWrapper = document.querySelector('.ml13');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+//var textWrapper = document.querySelector('.ml13');
+
+
+$('.ml13').each(function(){
+  $(this).innerHTML = $(this).textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+});
 
 anime.timeline({loop: true})
   .add({
