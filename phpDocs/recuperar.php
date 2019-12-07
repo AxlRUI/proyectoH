@@ -23,10 +23,10 @@
                     "GrupoSang"  => $rowPaciente[4],
                     "SSN"  => $rowPaciente[5],
                     "EstadoN" => $rowPaciente[6],
-                    "Curp" => $rowPaciente[9],
+                    "Curp" => $rowPaciente[9]
                 ];
                 array_push($arrayPrincial,$arrayPaciente);
-                $QueryCartilla = "SELECT * FROM Cartilla WHERE CveUnicaPaciente ='$rowPaciente[0]';";
+                $QueryCartilla = "SELECT * FROM Cartilla WHERE CveUnicaPaciente ='$rowPaciente[0]'";
                 if($resultadoV = $db ->query($QueryCartilla) ){
                     while($rowCartilla = $resultadoV -> fetch_array(MYSQLI_NUM) ){                 
                         if($rowCartilla[2] == 1){
@@ -36,7 +36,7 @@
                                 "Dosis" => $rowCartilla[3],
                                 "EdadFrec" => $rowCartilla[4],
                                 "Fecha de Aplicacion" => $rowCartilla[5],
-                                "Fecha de Vencimiento" => $rowCartilla[6] ,
+                                "Fecha de Vencimiento" => $rowCartilla[6] 
                             ];
                         }
                         if($rowCartilla[2] == 1){
@@ -46,7 +46,7 @@
                                 "Dosis" => $rowCartilla[3],
                                 "EdadFrec" => $rowCartilla[4],
                                 "Fecha de Aplicacion" => $rowCartilla[5],
-                                "Fecha de Vencimiento" => $rowCartilla[6] ,
+                                "Fecha de Vencimiento" => $rowCartilla[6] 
                             ];
                         }
                         array_push($arrayPrincial,$arrayCartilla);
