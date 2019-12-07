@@ -10,7 +10,7 @@
     foreach (array_rand($seed, 6) as $k) $rand .= $seed[$k]
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ";
-        echo json_encode($error);  
+        echo json_encode($error);
         exit();
     }
     else{
@@ -31,6 +31,6 @@
             $_SESSION['Usuario'] = $CURP;
             $_SESSION['Pass'] = $Pass;
         }
-        $db -> close()
+        $db -> close();
     }
 ?>

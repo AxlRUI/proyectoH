@@ -2,7 +2,7 @@
 
 
 $('.ml13').each(function(){
-  $(this).innerHTML = $(this).textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  this.innerHTML = this.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 });
 
 anime.timeline({loop: true})
