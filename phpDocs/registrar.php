@@ -1,13 +1,20 @@
 <?php
+    session_start();
     include 'conect.php';
+    $seed = str_split('abcdefghijklmnopqrstuvwxyz'
+                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                 .'0123456789!@#$%^&*()')
     $db = conectarDB();
+    shuffle($seed);
+    $rand = '';
+    foreach (array_rand($seed, 6) as $k) $rand .= $seed[$k]
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ";
         echo json_encode($error);
         exit();
     }
     else{
-        $cveUP = "123QWE";
+        $cveUP = $rand;
         $Nombre = $_POST['nombre'];
         $Apellidos  = $_POST['apellidos'];
         $Edad = $_POST['edad'];
@@ -21,6 +28,8 @@
         if($var = $db ->query($QueryInsert)){
             $string  = "Exitoso";
             echo json_encode($string);
+            $_SESSION['Usuario'] = $CURP;
+            $_SESSION['Pass'] = $Pass;
         }
         $db -> close();
     }
