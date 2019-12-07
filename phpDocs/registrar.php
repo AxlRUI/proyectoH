@@ -7,15 +7,15 @@
         exit();
     }
     else{
-        $Nombre = $_POST['Nombre'];
-        $Apellidos  = $_POST['Apellidos'];
-        $Edad = $_POST['Edad'];
-        $GrupoSang = $_POST['GS'];
-        $SSN = $_POST['SSN'];
-        $EstadoN = $_POST['EN'];
-        $Pass = $_POST['Pass'];
-        $CURP = $_POST['CURP'];
-        $Email = $_POST['Email'];
+        $Nombre = $_POST['nombre'];
+        $Apellidos  = $_POST['apellidos'];
+        $Edad = $_POST['edad'];
+        $GrupoSang = $_POST['gs'];
+        $SSN = $_POST['ssn'];
+        $EstadoN = $_POST['en'];
+        $Pass = $_POST['pass'];
+        $CURP = $_POST['curp'];
+        $Email = $_POST['email'];
         $QueryInsert  = "INSERT INTO Pacientes VALUES ($cveUP,$Nombre,$Apellidos,$Edad,$GrupoSang,$SSN,$EstadoN,$Pass,$CURP,$Email);";
         if($var = $db -> query($QueryInsert)){
             $string  = "Exitoso";
