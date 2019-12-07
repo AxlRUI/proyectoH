@@ -17,7 +17,7 @@
         $Pass = $_POST['pass'];
         $CURP = $_POST['curp'];
         $Email = $_POST['email'];
-        $QueryInsert  = "INSERT INTO Pacientes VALUES ($cveUP,$Nombre,$Apellidos,$Edad,$GrupoSang,$SSN,$EstadoN,$Pass,$CURP,$Email);";
+        $QueryInsert  = "INSERT INTO Pacientes VALUES ('$cveUP','$Nombre','$Apellidos',$Edad,'$GrupoSang','$SSN','$EstadoN','$Pass','$CURP','$Email');";
         if($var = $db -> query($QueryInsert)){
             $string  = "Exitoso";
             echo json_encode($string);
