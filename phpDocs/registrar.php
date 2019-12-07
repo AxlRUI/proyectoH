@@ -3,7 +3,7 @@
     $db = conectarDB();
     if($db ->connect_errno){
         $error = "Conexion no fue exitosa: ";
-        echo json_encode($error);  
+        echo json_encode($error);
         exit();
     }
     else{
@@ -22,6 +22,6 @@
             $string  = "Exitoso";
             echo json_encode($string);
         }
-        $db -> close()
+        $db -> close();
     }
 ?>
